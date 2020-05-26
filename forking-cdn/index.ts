@@ -8,7 +8,7 @@ const mw = pipeline(
 
 // point it at the origin
 const app = mw(
-  backends.origin("https://unirender.appspot.com/render/")
+  backends.origin("https://yourdomain.com/render/")
 );
 
 // respond to http requests
