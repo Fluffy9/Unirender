@@ -50,7 +50,7 @@ Before use, you should have cloned this source to the target machine. There shou
 
 Open the "unirender-cdn" folder and there should be a file called index.ts. Replace the backend URL with the URL of your Rendertron server 
 
-`
+```
 ...
 
 // point it at the origin
@@ -60,7 +60,8 @@ const app = mw(
 
 ...
 
-` 
+```
+
 #### Alternate | Limit to a single domain
 
 If you want the CDN to work only for a certain domain, add that to the url path like so: 
