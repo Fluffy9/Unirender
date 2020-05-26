@@ -65,33 +65,34 @@ const app = mw(
 
 If you want the CDN to work only for a certain domain, add that to the url path like so: 
 
-`
+```
 ...
 
 // point it at the origin
+
 const app = mw(
  backends.origin([https://your-rendertron-url.com]/render/[https://mywebsite.com]/)
 );
 
 ...
 
-` 
+```
 
 ### Step 3 | Build and Run the Dockerfile
 
 Enter the directory with the Dockerfile and the "unirender-cdn" folder. Run: 
-`
+```
 docker build -t "unirender" .
-`
+```
 Then run the newly created image with:
-`
+```
 docker run -it --rm unirender
-`
+```
 This will run the container in interactive mode, and when you exit the container it will automatically delete itself. 
 Nodejs runs on port 3000 by default so the Dockerfile is set to run unirender on port 3000. This is correct behavior if your server is with [fly](https://fly.io). Otherwise, you may want to map that to port 80:
-`
+```
 docker run -it -p 127.0.0.1:3000:80 --rm unirender
-`
+```
 When you have the docker image set up on Server 2, you should be able to access something at:
 
 * https://[Server 2]/ if you set up the server to map to **port 80, your domain only**
